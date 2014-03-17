@@ -3,12 +3,13 @@ package org.stevedowning.commons.idutils.ids;
 import org.stevedowning.commons.idutils.Id;
 import org.stevedowning.commons.idutils.Identifiable;
 
-public class SimpleId<T extends Identifiable<T>> implements Id<T> {
+public class LongId<T extends Identifiable<T>> implements Id<T> {
     private static final long serialVersionUID = -1804456232680133930L;
     private final long id;
     
-    public SimpleId(long id) { this.id = id; }
+    public LongId(long id) { this.id = id; }
     
+    public long getLong() { return id; }
     public String toString() { return Long.toString(id); }
 
     @Override
@@ -27,7 +28,7 @@ public class SimpleId<T extends Identifiable<T>> implements Id<T> {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        SimpleId<?> other = (SimpleId<?>) obj;
+        LongId<?> other = (LongId<?>) obj;
         if (id != other.id)
             return false;
         return true;
