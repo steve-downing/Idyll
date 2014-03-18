@@ -17,5 +17,9 @@ public class AbstractIdMapTest extends TestCase {
         
         userMap.put(steve);
         userMap.put(kate);
+        
+        assertTrue(userMap.containsKey(steveId));
+        assertEquals(steve, userMap.get(steveId));
+        assertEquals(2, userMap.size());
     }
 }
