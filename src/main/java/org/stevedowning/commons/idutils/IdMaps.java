@@ -7,7 +7,8 @@ import org.stevedowning.commons.idutils.datastructures.AbstractIdMap;
 import org.stevedowning.commons.idutils.datastructures.IdMap;
 
 public class IdMaps {
-    public static <T extends Identifiable<T>> IdMap<T> newIdMap(final Map<Id<? super T>, T> backingMap) {
+    public static <T extends Identifiable<T>> IdMap<T> newIdMap(
+            final Map<Id<? super T>, T> backingMap) {
         return new AbstractIdMap<T>() {
             protected Map<Id<? super T>, T> getInitialMap() { return backingMap; }
         };
