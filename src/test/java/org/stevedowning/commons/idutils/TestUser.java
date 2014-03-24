@@ -2,7 +2,7 @@ package org.stevedowning.commons.idutils;
 
 import org.stevedowning.commons.idutils.ids.LongId;
 
-public class TestUser implements MutablyIdentifiable<TestUser, LongId<TestUser>> {
+public class TestUser implements Identifiable<TestUser> {
     private LongId<TestUser> id = null;
     private final String name;
     
