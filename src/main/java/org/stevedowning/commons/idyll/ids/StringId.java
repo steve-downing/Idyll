@@ -1,7 +1,7 @@
-package org.stevedowning.commons.idutils.ids;
+package org.stevedowning.commons.idyll.ids;
 
-import org.stevedowning.commons.idutils.Id;
-import org.stevedowning.commons.idutils.Identifiable;
+import org.stevedowning.commons.idyll.Id;
+import org.stevedowning.commons.idyll.Identifiable;
 
 public class StringId<T extends Identifiable<T>> implements Id<T> {
     private static final long serialVersionUID = -8483099264639445749L;

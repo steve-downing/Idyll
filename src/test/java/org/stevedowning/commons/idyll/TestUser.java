@@ -1,4 +1,7 @@
-package org.stevedowning.commons.idutils;
+package org.stevedowning.commons.idyll;
+
+import org.stevedowning.commons.idyll.Id;
+import org.stevedowning.commons.idyll.Identifiable;
 
 public class TestUser implements Identifiable<TestUser> {
     private Id<TestUser> id = null;
