@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.stevedowning.commons</groupId>
-  <artifactId>idutils</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>idyll</artifactId>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
-  <name>idutils</name>
+  <name>idyll</name>
   <url>http://maven.apache.org</url>
 
   <properties>
