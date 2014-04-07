@@ -18,7 +18,7 @@ A common anti-pattern in Java is to use `int`s, or sometimes more complex but st
         showPropertyValue(PropertyType.ADDRESS.getId(), user.getId());
         ...
 
-The above code happily compiles and, if you're lucky, breaks in an obvious manner upon execution. In the worst case, you ship broken code, and in a better case, you waste a minute or so with an additional compile-relaunch-observe cycle.
+The above code happily compiles. If you're lucky, it'll break in an obvious manner upon execution. In the worst case, you ship broken code, and in a better case, you waste a minute or so with an additional compile-relaunch-observe cycle.
 
 ## The Solution
 
