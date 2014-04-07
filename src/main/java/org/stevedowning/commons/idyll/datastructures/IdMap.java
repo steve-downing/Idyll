@@ -1,11 +1,11 @@
-package org.stevedowning.commons.idutils.datastructures;
+package org.stevedowning.commons.idyll.datastructures;
 
 import java.util.Collection;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.stevedowning.commons.idutils.Id;
-import org.stevedowning.commons.idutils.Identifiable;
+import org.stevedowning.commons.idyll.Id;
+import org.stevedowning.commons.idyll.Identifiable;
 
 public interface IdMap<T extends Identifiable<? super T>> {
     public void clear();

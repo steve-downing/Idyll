@@ -1,13 +1,13 @@
-package org.stevedowning.commons.idutils.datastructures;
+package org.stevedowning.commons.idyll.datastructures;
 
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.stevedowning.commons.idutils.Id;
-import org.stevedowning.commons.idutils.Identifiable;
-import org.stevedowning.commons.idutils.exception.NullIdException;
+import org.stevedowning.commons.idyll.Id;
+import org.stevedowning.commons.idyll.Identifiable;
+import org.stevedowning.commons.idyll.exception.NullIdException;
 
 public abstract class AbstractIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
     private Map<Id<? super T>, T> map = null;
@@ -64,6 +64,10 @@ public abstract class AbstractIdMap<T extends Identifiable<? super T>> implement
     public Set<Id<? super T>> keySet() {
         initializeMapIfNecessary();
         return map.keySet();
+    }
+    
+    public T add(T val) {
+        return put(val);
     }
 
     public T put(T val) {

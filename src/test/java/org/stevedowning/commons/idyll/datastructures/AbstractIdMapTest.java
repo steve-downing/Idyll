@@ -1,12 +1,13 @@
-package org.stevedowning.commons.idutils.datastructures;
+package org.stevedowning.commons.idyll.datastructures;
 
 import junit.framework.TestCase;
 
-import org.stevedowning.commons.idutils.Id;
-import org.stevedowning.commons.idutils.IdMaps;
-import org.stevedowning.commons.idutils.TestUser;
-import org.stevedowning.commons.idutils.idfactory.LongIdFactory;
-import org.stevedowning.commons.idutils.ids.LongId;
+import org.stevedowning.commons.idyll.Id;
+import org.stevedowning.commons.idyll.IdMaps;
+import org.stevedowning.commons.idyll.TestUser;
+import org.stevedowning.commons.idyll.datastructures.IdMap;
+import org.stevedowning.commons.idyll.idfactory.LongIdFactory;
+import org.stevedowning.commons.idyll.ids.LongId;
 
 public class AbstractIdMapTest extends TestCase {
     private static enum SpecialUserId implements Id<TestUser> {

@@ -1,10 +1,10 @@
-package org.stevedowning.commons.idutils;
+package org.stevedowning.commons.idyll;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.stevedowning.commons.idutils.datastructures.AbstractIdMap;
-import org.stevedowning.commons.idutils.datastructures.IdMap;
+import org.stevedowning.commons.idyll.datastructures.AbstractIdMap;
+import org.stevedowning.commons.idyll.datastructures.IdMap;
 
 public class IdMaps {
     public static <T extends Identifiable<T>> IdMap<T> newIdMap(

@@ -1,4 +1,4 @@
-package org.stevedowning.commons.idutils;
+package org.stevedowning.commons.idyll;
 
 import java.io.Serializable;
 
