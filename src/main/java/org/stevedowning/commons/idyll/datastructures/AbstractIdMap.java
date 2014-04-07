@@ -65,6 +65,10 @@ public abstract class AbstractIdMap<T extends Identifiable<? super T>> implement
         initializeMapIfNecessary();
         return map.keySet();
     }
+    
+    public T add(T val) {
+        return put(val);
+    }
 
     public T put(T val) {
         if (val.getId() == null) throw new NullIdException();
