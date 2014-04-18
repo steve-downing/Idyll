@@ -3,9 +3,7 @@ package org.stevedowning.commons.idyll.datastructures;
 import junit.framework.TestCase;
 
 import org.stevedowning.commons.idyll.Id;
-import org.stevedowning.commons.idyll.IdMaps;
 import org.stevedowning.commons.idyll.TestUser;
-import org.stevedowning.commons.idyll.datastructures.IdMap;
 import org.stevedowning.commons.idyll.idfactory.LongIdFactory;
 import org.stevedowning.commons.idyll.ids.LongId;
 
@@ -16,15 +14,15 @@ public class AbstractIdMapTest extends TestCase {
     
     public void testBasic() {
         LongIdFactory idFactory = new LongIdFactory();
-        IdMap<TestUser> userMap = IdMaps.newIdHashMap();
+        IdMap<TestUser> userMap = new HashIdMap<TestUser>();
         LongId<TestUser> steveId = idFactory.generateId();
         TestUser steve = new TestUser("Steve", steveId);
         TestUser kate = new TestUser("Kate", idFactory.<TestUser>generateId());
         
-        userMap.put(steve);
-        userMap.put(kate);
+        userMap.add(steve);
+        userMap.add(kate);
         
-        assertTrue(userMap.containsKey(steveId));
+        assertTrue(userMap.containsId(steveId));
         assertEquals(steve, userMap.get(steveId));
         assertEquals(2, userMap.size());
     }
@@ -33,11 +31,11 @@ public class AbstractIdMapTest extends TestCase {
         TestUser anon = new TestUser("Anonymous", SpecialUserId.ANONYMOUS_USER_ID);
         TestUser admin = new TestUser("Admin", SpecialUserId.ADMIN_USER_ID);
         
-        IdMap<TestUser> userMap = IdMaps.newIdHashMap();
-        userMap.put(anon);
-        userMap.put(admin);
+        IdMap<TestUser> userMap = new HashIdMap<TestUser>();
+        userMap.add(anon);
+        userMap.add(admin);
 
-        assertTrue(userMap.containsKey(SpecialUserId.ANONYMOUS_USER_ID));
+        assertTrue(userMap.containsId(SpecialUserId.ANONYMOUS_USER_ID));
         assertEquals(anon, userMap.get(SpecialUserId.ANONYMOUS_USER_ID));
         assertEquals(2, userMap.size());
     }

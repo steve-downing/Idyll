@@ -1,39 +1,29 @@
 package org.stevedowning.commons.idyll.datastructures;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 import org.stevedowning.commons.idyll.Id;
 import org.stevedowning.commons.idyll.Identifiable;
 import org.stevedowning.commons.idyll.exception.NullIdException;
 
-public class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
+class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
     private final Map<Id<? super T>, T> map;
     
     public WrapperIdMap(Map<Id<? super T>, T> map) {
         this.map = map;
-    }
-    
-    public Map<Id<? super T>, T> getMap() {
-        return map;
     }
 
     public void clear() {
         map.clear();
     }
 
-    public boolean containsKey(Id<? super T> key) {
+    public boolean containsId(Id<? super T> key) {
         return map.containsKey(key);
-    }
-
-    public boolean containsValue(T val) {
-        return map.containsValue(val);
-    }
-
-    public Set<Entry<Id<? super T>, T>> entrySet() {
-        return map.entrySet();
     }
 
     public T get(Id<? super T> key) {
@@ -44,22 +34,18 @@ public class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T>
         return map.isEmpty();
     }
 
-    public Set<Id<? super T>> keySet() {
+    public Set<Id<? super T>> getIds() {
         return map.keySet();
     }
-    
-    public T add(T val) {
-        return put(val);
-    }
 
-    public T put(T val) {
+    public void add(T val) {
         if (val.getId() == null) throw new NullIdException();
-        return map.put(val.getId(), val);
+        map.put(val.getId(), val);
     }
 
-    public void putAll(Collection<T> vals) {
+    public void addAll(Collection<? extends T> vals) {
         for (T val : vals) {
-            put(val);
+            add(val);
         }
     }
 
@@ -73,5 +59,17 @@ public class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T>
 
     public Collection<T> values() {
         return map.values();
+    }
+
+    public Iterator<T> iterator() {
+        return map.values().iterator();
+    }
+
+    public void forEach(Consumer<? super T> action) {
+        map.values().forEach(action);
+    }
+
+    public Spliterator<T> spliterator() {
+        return map.values().spliterator();
     }
 }
