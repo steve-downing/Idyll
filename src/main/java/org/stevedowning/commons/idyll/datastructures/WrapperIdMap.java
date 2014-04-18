@@ -11,7 +11,7 @@ import org.stevedowning.commons.idyll.Id;
 import org.stevedowning.commons.idyll.Identifiable;
 import org.stevedowning.commons.idyll.exception.NullIdException;
 
-public class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
+class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
     private final Map<Id<? super T>, T> map;
     
     public WrapperIdMap(Map<Id<? super T>, T> map) {

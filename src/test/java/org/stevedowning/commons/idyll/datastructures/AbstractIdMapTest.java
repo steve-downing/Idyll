@@ -3,7 +3,6 @@ package org.stevedowning.commons.idyll.datastructures;
 import junit.framework.TestCase;
 
 import org.stevedowning.commons.idyll.Id;
-import org.stevedowning.commons.idyll.IdMaps;
 import org.stevedowning.commons.idyll.TestUser;
 import org.stevedowning.commons.idyll.idfactory.LongIdFactory;
 import org.stevedowning.commons.idyll.ids.LongId;
@@ -15,7 +14,7 @@ public class AbstractIdMapTest extends TestCase {
     
     public void testBasic() {
         LongIdFactory idFactory = new LongIdFactory();
-        IdMap<TestUser> userMap = IdMaps.newIdHashMap();
+        IdMap<TestUser> userMap = new HashIdMap<TestUser>();
         LongId<TestUser> steveId = idFactory.generateId();
         TestUser steve = new TestUser("Steve", steveId);
         TestUser kate = new TestUser("Kate", idFactory.<TestUser>generateId());
@@ -32,7 +31,7 @@ public class AbstractIdMapTest extends TestCase {
         TestUser anon = new TestUser("Anonymous", SpecialUserId.ANONYMOUS_USER_ID);
         TestUser admin = new TestUser("Admin", SpecialUserId.ADMIN_USER_ID);
         
-        IdMap<TestUser> userMap = IdMaps.newIdHashMap();
+        IdMap<TestUser> userMap = new HashIdMap<TestUser>();
         userMap.add(anon);
         userMap.add(admin);
 
