@@ -59,7 +59,7 @@ Implementing your own `IdFactory` only entails defining a `generateId()` method.
 
 Idyll also comes with the `IdMap` data structure, which makes it a little simpler to keep a collection of Identifiable objects:
 
-    IdMap<User> users = IdMaps.newIdHashMap();
+    IdMap<User> users = new HashIdMap<User>();
     users.add(steve);
     users.add(kate);
     
