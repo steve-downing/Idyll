@@ -22,12 +22,12 @@ class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
         map.clear();
     }
 
-    public boolean containsId(Id<? super T> key) {
-        return map.containsKey(key);
+    public boolean containsId(Id<? super T> id) {
+        return map.containsKey(id);
     }
 
-    public T get(Id<? super T> key) {
-        return map.get(key);
+    public T get(Id<? super T> id) {
+        return map.get(id);
     }
 
     public boolean isEmpty() {
@@ -49,8 +49,8 @@ class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
         }
     }
 
-    public T remove(Id<? super T> key) {
-        return map.remove(key);
+    public T remove(Id<? super T> id) {
+        return map.remove(id);
     }
 
     public int size() {
