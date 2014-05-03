@@ -5,7 +5,7 @@ import java.io.Serializable;
 import org.stevedowning.commons.idyll.Id;
 import org.stevedowning.commons.idyll.Identifiable;
 
-public class StringId<T extends Identifiable<T>> implements Id<T>, Serializable {
+public final class StringId<T extends Identifiable<T>> implements Id<T>, Serializable {
     private static final long serialVersionUID = -8483099264639445749L;
     private final String id;
     
