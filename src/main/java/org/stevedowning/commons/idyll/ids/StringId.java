@@ -1,9 +1,11 @@
 package org.stevedowning.commons.idyll.ids;
 
+import java.io.Serializable;
+
 import org.stevedowning.commons.idyll.Id;
 import org.stevedowning.commons.idyll.Identifiable;
 
-public class StringId<T extends Identifiable<T>> implements Id<T> {
+public class StringId<T extends Identifiable<T>> implements Id<T>, Serializable {
     private static final long serialVersionUID = -8483099264639445749L;
     private final String id;
     
