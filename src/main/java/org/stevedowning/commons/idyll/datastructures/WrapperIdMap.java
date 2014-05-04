@@ -14,7 +14,7 @@ import org.stevedowning.commons.idyll.exception.NullIdException;
 class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
     private final Map<Id<? super T>, T> map;
     
-    public WrapperIdMap(Map<Id<? super T>, T> map) {
+    WrapperIdMap(Map<Id<? super T>, T> map) {
         this.map = map;
     }
 
