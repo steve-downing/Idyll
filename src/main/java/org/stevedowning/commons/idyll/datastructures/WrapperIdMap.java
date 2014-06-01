@@ -4,8 +4,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 import org.stevedowning.commons.idyll.Id;
 import org.stevedowning.commons.idyll.Identifiable;
@@ -63,13 +61,5 @@ class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
 
     public Iterator<T> iterator() {
         return map.values().iterator();
-    }
-
-    public void forEach(Consumer<? super T> action) {
-        map.values().forEach(action);
-    }
-
-    public Spliterator<T> spliterator() {
-        return map.values().spliterator();
     }
 }
