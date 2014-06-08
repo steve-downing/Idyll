@@ -1,5 +1,6 @@
 package org.stevedowning.commons.idyll.datastructures;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
@@ -9,7 +10,9 @@ import org.stevedowning.commons.idyll.Id;
 import org.stevedowning.commons.idyll.Identifiable;
 import org.stevedowning.commons.idyll.exception.NullIdException;
 
-class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
+class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T>, Serializable {
+    private static final long serialVersionUID = -7295228543827599795L;
+
     private final Map<Id<? super T>, T> map;
     
     WrapperIdMap(Map<Id<? super T>, T> map) {
