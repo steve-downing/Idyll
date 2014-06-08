@@ -9,6 +9,7 @@ public final class LongIdFactory implements IdFactory {
     private final AtomicLong counter = new AtomicLong(0);
 
     public <T extends Identifiable<T>> LongId<T> generateId() {
-        return new LongId<T>(counter.getAndIncrement());
+        LongId<T> id = new LongId<T>(counter.getAndIncrement());
+        return id;
     }
 }

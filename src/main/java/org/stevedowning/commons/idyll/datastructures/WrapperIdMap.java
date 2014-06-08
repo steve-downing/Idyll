@@ -1,17 +1,18 @@
 package org.stevedowning.commons.idyll.datastructures;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 import org.stevedowning.commons.idyll.Id;
 import org.stevedowning.commons.idyll.Identifiable;
 import org.stevedowning.commons.idyll.exception.NullIdException;
 
-class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
+class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T>, Serializable {
+    private static final long serialVersionUID = -7295228543827599795L;
+
     private final Map<Id<? super T>, T> map;
     
     WrapperIdMap(Map<Id<? super T>, T> map) {
@@ -63,13 +64,5 @@ class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T> {
 
     public Iterator<T> iterator() {
         return map.values().iterator();
-    }
-
-    public void forEach(Consumer<? super T> action) {
-        map.values().forEach(action);
-    }
-
-    public Spliterator<T> spliterator() {
-        return map.values().spliterator();
     }
 }
