@@ -4,7 +4,7 @@ Idyll is a lightweight Java library for dealing with object identifiers. This li
 
 ## Why Generic IDs?
 
-Java isn't perfect and you pay a cost for your IDE's complexity, but you use them in part because type-safety protects you and your team from an entire class of errors. You can press this advantage by taking type-safety even further. Any non-trivial project will sometimes toss around object IDs. Protect yourself from mixing up these ID types by applying generics.
+Java's type system protects you and your team from an entire class of errors. You can press this advantage by taking type-safety even further. Any non-trivial project will sometimes toss around object IDs. Protect yourself from mixing up these ID types by applying generics.
 
 ## The Problem
 
