@@ -4,11 +4,11 @@ Idyll is a lightweight Java library for dealing with object identifiers. This li
 
 ## Why Generic IDs?
 
-Java isn't perfect and you pay a cost for your IDE's complexity, but you use them in part because type-safety protects you and your team from an entire class of errors. You can press this advantage by taking type-safety even further. Any non-trivial project will sometimes toss around object IDs. Protect yourself from mixing up these ID types by applying generics.
+Java's type system protects you and your team from an entire class of errors. You can press this advantage by taking type-safety even further. Any non-trivial project will sometimes toss around object IDs. Protect yourself from mixing up these ID types by applying generics.
 
 ## The Problem
 
-A common anti-pattern in Java is to use `int`s, or sometimes more complex but still unsafe objects, as unique identifiers. This isn't awful until you start identifying more than one type of object. However, when more than one type of object starts to rely on `int`s as identifiers, you open yourself up to the very errors that type-safety is supposed to save you from. For example:
+A common pattern in Java is to use `int`s, or sometimes more complex but still unsafe objects, as unique identifiers. This isn't bad until you start identifying more than one type of object. When more than one type of object starts to rely on `int`s as identifiers, you open yourself up to the very errors that type-safety is supposed to save you from. For example:
 
     private void showPropertyValue(int userId, int propertyTypeId) {
         ...
@@ -18,7 +18,7 @@ A common anti-pattern in Java is to use `int`s, or sometimes more complex but st
         showPropertyValue(PropertyType.ADDRESS.getId(), user.getId());
         ...
 
-The above code happily compiles. If you're lucky, it'll break in an obvious manner upon execution. In the worst case, you ship broken code, and in a better case, you waste a minute or so with an additional compile-relaunch-observe cycle.
+The above code happily compiles. If you're lucky, it'll break in an obvious manner upon execution. In that case, you lose a minute or so with a compile-relaunch-observe cycle. In the worst case, you ship broken code.
 
 ## The Solution
 
@@ -28,7 +28,7 @@ Use `Id<T>`s instead of `int`s! The method signature from above becomes:
         ...
     }
 
-From there, the improper call to `showPropertyValue()` fails to compile. Your IDE will give you quick feedback if you accidentally juxtapose your parameters, but chances are it would've suggested the right thing in the first place.
+From there, the improper call to `showPropertyValue()` fails to compile. Your IDE will give you quick feedback if you accidentally juxtapose your parameters, but it may have just suggested the right thing for you in the first place.
 
 ## Usage
 
