@@ -14,10 +14,10 @@ public class AbstractIdMapTest extends TestCase {
     
     public void testBasic() {
         LongIdFactory idFactory = new LongIdFactory();
-        IdMap<TestUser> userMap = new HashIdMap<>();
+        IdMap<TestUser> userMap = new HashIdMap<TestUser>();
         LongId<TestUser> steveId = idFactory.generateId();
         TestUser steve = new TestUser("Steve", steveId);
-        TestUser kate = new TestUser("Kate", idFactory.generateId());
+        TestUser kate = new TestUser("Kate", idFactory.<TestUser>generateId());
         
         userMap.add(steve);
         userMap.add(kate);
@@ -31,7 +31,7 @@ public class AbstractIdMapTest extends TestCase {
         TestUser anon = new TestUser("Anonymous", SpecialUserId.ANONYMOUS_USER_ID);
         TestUser admin = new TestUser("Admin", SpecialUserId.ADMIN_USER_ID);
         
-        IdMap<TestUser> userMap = new HashIdMap<>();
+        IdMap<TestUser> userMap = new HashIdMap<TestUser>();
         userMap.add(anon);
         userMap.add(admin);
 
