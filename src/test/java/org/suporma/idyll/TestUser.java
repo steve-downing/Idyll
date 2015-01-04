@@ -1,4 +1,4 @@
-package org.stevedowning.commons.idyll;
+package org.suporma.idyll;
 
 import org.suporma.idyll.Id;
 import org.suporma.idyll.Identifiable;

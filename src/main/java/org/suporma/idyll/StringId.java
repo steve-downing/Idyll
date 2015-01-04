@@ -1,29 +1,17 @@
-package org.suporma.idyll.ids;
+package org.suporma.idyll;
 
 import java.io.Serializable;
-import java.util.UUID;
 
-import org.suporma.idyll.Id;
-import org.suporma.idyll.Identifiable;
-
-public class Uuid<T extends Identifiable<T>> implements Id<T>, Serializable {
-    private static final long serialVersionUID = 6072262846320135898L;
-    private final UUID id;
+public final class StringId<T extends Identifiable<T>> implements Id<T>, Serializable {
+    private static final long serialVersionUID = -8483099264639445749L;
+    private final String id;
     
-    public Uuid(UUID id) {
+    public StringId(String id) {
         this.id = id;
     }
     
-    public Uuid(byte[] name) {
-        this.id = UUID.nameUUIDFromBytes(name);
-    }
-    
-    public Uuid(String name) {
-        this.id = UUID.fromString(name);
-    }
-    
-    public UUID getUuid() { return id; }
-    public String toString() { return id.toString(); }
+    public String getString() { return id; }
+    public String toString() { return id; }
 
     @Override
     public int hashCode() {
@@ -41,7 +29,7 @@ public class Uuid<T extends Identifiable<T>> implements Id<T>, Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Uuid<?> other = (Uuid<?>) obj;
+        StringId<?> other = (StringId<?>) obj;
         if (id == null) {
             if (other.id != null)
                 return false;

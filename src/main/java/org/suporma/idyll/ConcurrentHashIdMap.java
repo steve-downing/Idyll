@@ -1,9 +1,6 @@
-package org.suporma.idyll.datastructures;
+package org.suporma.idyll;
 
 import java.util.concurrent.ConcurrentHashMap;
-
-import org.suporma.idyll.Id;
-import org.suporma.idyll.Identifiable;
 
 public final class ConcurrentHashIdMap<T extends Identifiable<? super T>> extends WrapperIdMap<T> {
     private static final long serialVersionUID = 5022352615447614477L;

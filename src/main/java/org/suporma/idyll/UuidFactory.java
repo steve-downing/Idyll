@@ -1,10 +1,6 @@
-package org.suporma.idyll.idfactory;
+package org.suporma.idyll;
 
 import java.util.UUID;
-
-import org.suporma.idyll.Id;
-import org.suporma.idyll.Identifiable;
-import org.suporma.idyll.ids.Uuid;
 
 public class UuidFactory implements IdFactory {
     @Override

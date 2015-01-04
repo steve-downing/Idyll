@@ -1,9 +1,6 @@
-package org.suporma.idyll.ids;
+package org.suporma.idyll;
 
 import java.io.Serializable;
-
-import org.suporma.idyll.Id;
-import org.suporma.idyll.Identifiable;
 
 public final class LongId<T extends Identifiable<T>> implements Id<T>, Serializable {
     private static final long serialVersionUID = -1804456232680133930L;
