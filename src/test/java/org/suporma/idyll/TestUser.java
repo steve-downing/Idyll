@@ -1,7 +1,7 @@
 package org.suporma.idyll;
 
-import org.suporma.idyll.Id;
-import org.suporma.idyll.Identifiable;
+import org.suporma.idyll.id.Id;
+import org.suporma.idyll.id.Identifiable;
 
 public class TestUser implements Identifiable<TestUser> {
     private Id<TestUser> id = null;

@@ -1,10 +1,13 @@
-package org.suporma.idyll;
+package org.suporma.idyll.util;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
+import org.suporma.idyll.id.Id;
+import org.suporma.idyll.id.Identifiable;
 
 class WrapperIdMap<T extends Identifiable<? super T>> implements IdMap<T>, Serializable {
     private static final long serialVersionUID = -7295228543827599795L;

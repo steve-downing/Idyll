@@ -1,7 +1,10 @@
-package org.suporma.idyll;
+package org.suporma.idyll.util;
 
 import java.util.Collection;
 import java.util.Set;
+
+import org.suporma.idyll.id.Id;
+import org.suporma.idyll.id.Identifiable;
 
 public interface IdMap<T extends Identifiable<? super T>> extends Iterable<T> {
     public void add(T val);

@@ -1,4 +1,4 @@
-package org.suporma.idyll;
+package org.suporma.idyll.id;
 
 import java.io.Serializable;
 
