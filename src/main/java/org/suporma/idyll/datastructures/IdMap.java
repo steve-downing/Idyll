@@ -1,10 +1,10 @@
-package org.stevedowning.commons.idyll.datastructures;
+package org.suporma.idyll.datastructures;
 
 import java.util.Collection;
 import java.util.Set;
 
-import org.stevedowning.commons.idyll.Id;
-import org.stevedowning.commons.idyll.Identifiable;
+import org.suporma.idyll.Id;
+import org.suporma.idyll.Identifiable;
 
 public interface IdMap<T extends Identifiable<? super T>> extends Iterable<T> {
     public void add(T val);

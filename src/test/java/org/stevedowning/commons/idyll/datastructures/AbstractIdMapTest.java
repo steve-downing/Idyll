@@ -2,10 +2,12 @@ package org.stevedowning.commons.idyll.datastructures;
 
 import junit.framework.TestCase;
 
-import org.stevedowning.commons.idyll.Id;
 import org.stevedowning.commons.idyll.TestUser;
-import org.stevedowning.commons.idyll.idfactory.LongIdFactory;
-import org.stevedowning.commons.idyll.ids.LongId;
+import org.suporma.idyll.Id;
+import org.suporma.idyll.datastructures.HashIdMap;
+import org.suporma.idyll.datastructures.IdMap;
+import org.suporma.idyll.idfactory.LongIdFactory;
+import org.suporma.idyll.ids.LongId;
 
 public class AbstractIdMapTest extends TestCase {
     private static enum SpecialUserId implements Id<TestUser> {

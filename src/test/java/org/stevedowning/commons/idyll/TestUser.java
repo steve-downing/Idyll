@@ -1,7 +1,7 @@
 package org.stevedowning.commons.idyll;
 
-import org.stevedowning.commons.idyll.Id;
-import org.stevedowning.commons.idyll.Identifiable;
+import org.suporma.idyll.Id;
+import org.suporma.idyll.Identifiable;
 
 public class TestUser implements Identifiable<TestUser> {
     private Id<TestUser> id = null;

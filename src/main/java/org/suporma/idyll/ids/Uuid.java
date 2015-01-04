@@ -1,10 +1,10 @@
-package org.stevedowning.commons.idyll.ids;
+package org.suporma.idyll.ids;
 
 import java.io.Serializable;
 import java.util.UUID;
 
-import org.stevedowning.commons.idyll.Id;
-import org.stevedowning.commons.idyll.Identifiable;
+import org.suporma.idyll.Id;
+import org.suporma.idyll.Identifiable;
 
 public class Uuid<T extends Identifiable<T>> implements Id<T>, Serializable {
     private static final long serialVersionUID = 6072262846320135898L;

@@ -1,10 +1,10 @@
-package org.stevedowning.commons.idyll.idfactory;
+package org.suporma.idyll.idfactory;
 
 import java.util.UUID;
 
-import org.stevedowning.commons.idyll.Id;
-import org.stevedowning.commons.idyll.Identifiable;
-import org.stevedowning.commons.idyll.ids.Uuid;
+import org.suporma.idyll.Id;
+import org.suporma.idyll.Identifiable;
+import org.suporma.idyll.ids.Uuid;
 
 public class UuidFactory implements IdFactory {
     @Override

@@ -1,9 +1,9 @@
-package org.stevedowning.commons.idyll.idfactory;
+package org.suporma.idyll.idfactory;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.stevedowning.commons.idyll.Identifiable;
-import org.stevedowning.commons.idyll.ids.LongId;
+import org.suporma.idyll.Identifiable;
+import org.suporma.idyll.ids.LongId;
 
 public final class LongIdFactory implements IdFactory {
     private final AtomicLong counter;
