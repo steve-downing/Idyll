@@ -1,13 +1,10 @@
 package org.suporma.idyll.util;
 
-import junit.framework.TestCase;
-
 import org.suporma.idyll.TestUser;
 import org.suporma.idyll.id.Id;
 import org.suporma.idyll.id.LongId;
-import org.suporma.idyll.util.HashIdMap;
-import org.suporma.idyll.util.IdMap;
-import org.suporma.idyll.util.LongIdFactory;
+
+import junit.framework.TestCase;
 
 public class AbstractIdMapTest extends TestCase {
     private static enum SpecialUserId implements Id<TestUser> {
